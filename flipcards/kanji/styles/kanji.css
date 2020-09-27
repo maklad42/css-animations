@@ -1,0 +1,82 @@
+body {
+  background: #3f3f3f url(../images/wood-bg.png);
+  font-family: Helvetica, Arial, Sans-Serif;
+}
+
+#kanji-wrapper {
+  width: 800px; position: relative; margin: 50px auto;
+}
+
+.kanji-con {
+  width: 500px;
+  height: 600px;
+  -webkit-perspective: 1000;
+}
+
+.kanji-card {
+  width: 500px;
+  height: 600px;
+  border: 8px solid #fff;
+  /*background-color: #ccc;*/
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+}
+  .kanji-con:hover .kanji-card {
+    -webkit-transform: rotateY(180deg);
+  }
+
+.face {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+
+.character {
+  float: left; position: absolute; top: 30px; left: 20px;
+  -webkit-transform: rotate(-3deg);
+}
+  .character .front {
+  background-color: #ccc;
+  }
+  .character .back {
+    width: 460px; height: 560px; padding: 20px;
+    -webkit-transform: rotateY(180deg);
+    background: #a3a3a3 url(../images/texture.png);
+  }
+    .character .back h2 {
+      width: 440px; height: 30px; margin: 0 auto 15px auto;
+    }
+    .character img {
+      float: right;
+    }
+    .character p {
+      float: left; width: 185px; margin: 10px 0 10px 0;
+      font-size: 20px; line-height: 28px; color: #4c4c4c;
+    }
+    .character dl {
+      font-size: 30px; font-weight: bold;
+      line-height: 40px; color: #717171;
+      width: 440px; padding: 5px 10px; overflow: hidden;
+      background: #cfcfcf;
+      -webkit-box-shadow: 0 1px 5px #888;
+      text-shadow: 0 1px 1px #f5f5f5;
+    }
+      .character dl dt {
+        float: left; clear: both;
+      }
+      .character dl dd {
+        float: right;
+      }
+
+p.kanjiLit {
+  font-size: 400px;
+  width: 500px;
+  line-height: 580px;
+  text-align: center;
+}
+
+.front {
+  z-index: 10;
+}
+.container:hover .front {
+  z-index: 0;
+}
