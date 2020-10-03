@@ -1,5 +1,5 @@
 {
-  "name": "Inout Labels",
+  "name": "inputLabels",
   "version": "1.0.0",
   "description": "Some cool tricks with input labels and placeholder text to improve the user's form experience.",
   "main": "gulpfile.js",
