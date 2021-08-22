@@ -1,3 +1,5 @@
+/* General Styles */
+
 * {
   box-sizing: border-box;
 }
@@ -15,6 +17,8 @@ body {
   align-items: center;
   align-content: center;
 }
+
+/* Spinner 1 */
 
 .spn-1,
 .spn-1:before,
@@ -75,6 +79,8 @@ body {
     height: 5em;
   }
 }
+
+/* Spinner 2 */
 
 .spn-2,
 .spn-2:before,
@@ -143,6 +149,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Spinner 3 */
 
 .spn-3 {
   font-size: 10px;
@@ -223,6 +231,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Spinner 4 */
 
 .spn-4 {
   color: #ffffff;
@@ -309,6 +319,8 @@ body {
       0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }
+
+/* Spinner 5 */
 
 .spn-5 {
   margin: 100px auto;
@@ -477,6 +489,8 @@ body {
   }
 }
 
+/* Spinner 6 */
+
 .spn-6 {
   color: #ffffff;
   font-size: 90px;
@@ -576,6 +590,8 @@ body {
   }
 }
 
+/* Spinner 7 */
+
 .spn-7,
 .spn-7:before,
 .spn-7:after {
@@ -633,6 +649,8 @@ body {
     box-shadow: 0 2.5em 0 0;
   }
 }
+
+/* Spinner 8 */
 
 .spn-8,
 .spn-8:after {
