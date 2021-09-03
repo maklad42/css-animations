@@ -822,3 +822,250 @@ body {
     transform: rotate(1800deg);
   }
 }
+
+.spn-13 {
+  display: inline-block;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  transform: rotate(45deg);
+  transform-origin: 40px 200px;
+}
+.spn-13 div {
+  top: 64px;
+  left: 64px;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.spn-13 div:after,
+.spn-13 div:before {
+  content: ' ';
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+}
+.spn-13 div:before {
+  left: -48px;
+  border-radius: 50% 0 0 50%;
+}
+.spn-13 div:after {
+  top: -48px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.spn-14 {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.spn-14 div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 128px;
+  height: 128px;
+  margin: 16px;
+  border: 16px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.spn-14 div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spn-14 div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spn-14 div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spn-15 {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.spn-15 div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.spn-15 div:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.spn-15 div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.spn-15 div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.spn-15 div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.spn-15 div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.spn-15 div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.spn-15 div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.spn-15 div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.spn-15 div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.spn-15 div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.spn-15 div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.spn-15 div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.spn-15 div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.spn-15 div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.spn-15 div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.spn-15 div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.spn-15 div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spn-16 {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.spn-16 div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  animation: lds-grid 1.2s linear infinite;
+}
+.spn-16 div:nth-child(1) {
+  top: 16px;
+  left: 16px;
+  animation-delay: 0s;
+}
+.spn-16 div:nth-child(2) {
+  top: 16px;
+  left: 64px;
+  animation-delay: -0.4s;
+}
+.spn-16 div:nth-child(3) {
+  top: 16px;
+  left: 112px;
+  animation-delay: -0.8s;
+}
+.spn-16 div:nth-child(4) {
+  top: 64px;
+  left: 16px;
+  animation-delay: -0.4s;
+}
+.spn-16 div:nth-child(5) {
+  top: 64px;
+  left: 64px;
+  animation-delay: -0.8s;
+}
+.spn-16 div:nth-child(6) {
+  top: 64px;
+  left: 112px;
+  animation-delay: -1.2s;
+}
+.spn-16 div:nth-child(7) {
+  top: 112px;
+  left: 16px;
+  animation-delay: -0.8s;
+}
+.spn-16 div:nth-child(8) {
+  top: 112px;
+  left: 64px;
+  animation-delay: -1.2s;
+}
+.spn-16 div:nth-child(9) {
+  top: 112px;
+  left: 112px;
+  animation-delay: -1.6s;
+}
+@keyframes lds-grid {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
