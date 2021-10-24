@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  height: 210px;
+  text-align: center;
+  font-size: 3rem;
+  position: fixed;
+  top: 0;
+  background-color: hotpink;
+  color: midnightblue;
+}
+
+.progress-wrapper {
+  width: 100%;
+  height: 8px;
+  background-color: rgb(255, 158, 239);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: rgb(112, 112, 175);
+  width: 0%;
+}
+
+.content {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 230px;
+}
