@@ -717,9 +717,8 @@ body {
 
 .spn-10 {
   transform: translateZ(1px);
-  width: 10em;
-  height: 10em;
-  margin: 80px auto;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: #fff;
   animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
