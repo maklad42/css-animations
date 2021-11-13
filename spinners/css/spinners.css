@@ -688,24 +688,19 @@ body {
 }
 
 .spn-9 {
-  margin: auto;
-  width: 10em;
-  height: 10em;
+  width: 100%;
+  height: 100%;
 }
-
 .spn-9:after {
   content: ' ';
   display: inline-block;
-  margin: 60px auto;
-  width: 10em;
-  height: 10em;
-  /* margin: 8px; */
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
   border-radius: 50%;
   border: 10px solid #fff;
   border-color: #fff transparent #fff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
-
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
@@ -717,9 +712,8 @@ body {
 
 .spn-10 {
   transform: translateZ(1px);
-  width: 10em;
-  height: 10em;
-  margin: 80px auto;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: #fff;
   animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -866,18 +860,17 @@ body {
 .spn-14 {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
 }
 .spn-14 div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  top: 60px;
-  left: 60px;
-  width: 128px;
-  height: 128px;
-  margin: 16px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: 16px solid #fff;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -987,62 +980,46 @@ body {
 }
 
 .spn-16 {
-  display: inline-block;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-gap: 11%;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
 }
 .spn-16 div {
-  position: absolute;
-  width: 32px;
-  height: 32px;
+  position: relative;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: #fff;
   animation: lds-grid 1.2s linear infinite;
 }
 .spn-16 div:nth-child(1) {
-  top: 16px;
-  left: 16px;
   animation-delay: 0s;
 }
 .spn-16 div:nth-child(2) {
-  top: 16px;
-  left: 64px;
   animation-delay: -0.4s;
 }
 .spn-16 div:nth-child(3) {
-  top: 16px;
-  left: 112px;
   animation-delay: -0.8s;
 }
 .spn-16 div:nth-child(4) {
-  top: 64px;
-  left: 16px;
   animation-delay: -0.4s;
 }
 .spn-16 div:nth-child(5) {
-  top: 64px;
-  left: 64px;
   animation-delay: -0.8s;
 }
 .spn-16 div:nth-child(6) {
-  top: 64px;
-  left: 112px;
   animation-delay: -1.2s;
 }
 .spn-16 div:nth-child(7) {
-  top: 112px;
-  left: 16px;
   animation-delay: -0.8s;
 }
 .spn-16 div:nth-child(8) {
-  top: 112px;
-  left: 64px;
   animation-delay: -1.2s;
 }
 .spn-16 div:nth-child(9) {
-  top: 112px;
-  left: 112px;
   animation-delay: -1.6s;
 }
 @keyframes lds-grid {
