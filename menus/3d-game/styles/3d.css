@@ -1,75 +1,27 @@
 @import url(https://fonts.googleapis.com/css2?family=Audiowide&display=swap);
-
-/* latin-ext */
-@font-face {
-  font-family: 'Audiowide';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/audiowide/v9/l7gdbjpo0cum0ckerWCdmA_OMRlABolM.woff2)
-    format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Audiowide';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/audiowide/v9/l7gdbjpo0cum0ckerWCdlg_OMRlABg.woff2)
-    format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 body {
   perspective: 40vw;
-  min-block-size: 100%;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-    Noto Sans, sans-serif;
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  place-content: center;
 }
-
 .threeD-button-set {
-  --y: ;
-  --x: ;
   --distance: 1px;
-  --theme: hsl(180 100% 50);
+  --theme: hsl(180 100% 50%);
   --theme-bg: hsl(180 100% 50% / 25%);
   --theme-bg-hover: hsl(180 100% 50% / 40%);
   --theme-text: white;
   --theme-shadow: hsl(180 100% 10% / 25%);
-
   --_max-rotateY: 10deg;
   --_max-rotateX: 15deg;
   --_btn-bg: var(--theme-bg);
   --_btn-bg-hover: var(--theme-bg-hover);
   --_btn-text: var(--theme-text);
+  --_btn-text-shadow: var(--theme-shadow);
   --_bounce-ease: cubic-bezier(0.5, 1.75, 0.75, 1.25);
-
-  /* remove <ul> margins */
   margin: 0;
-
-  /* vertical rag-right layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2.5vh;
-
-  /* create 3D space context */
   transform-style: preserve-3d;
-
-  /* clamped menu rotation to not be too extreme */
   transform: rotateY(
       clamp(calc(var(--_max-rotateY) * -1), var(--y), var(--_max-rotateY))
     )
@@ -77,23 +29,41 @@ body {
       clamp(calc(var(--_max-rotateX) * -1), var(--x), var(--_max-rotateX))
     );
 }
+.threeD-button-set:focus {
+  outline: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .threeD-button-set {
+    will-change: transform;
+    transition: transform 0.1s ease;
+    -webkit-animation: rotate-y 5s ease-in-out infinite;
+    animation: rotate-y 5s ease-in-out infinite;
+  }
+}
 
+@media (dynamic-range: high) {
+  @supports (color: color(display-p3 0 0 0)) {
+    .threeD-button-set {
+      --theme: color(display-p3 0.4 0 0.9);
+    }
+  }
+}
 .threeD-button-set > li {
   display: inline-flex;
   position: relative;
   transform-style: preserve-3d;
 }
-
 .threeD-button-set button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  outline: none;
+  outline: 0;
   border: none;
-
+  -webkit-tap-highlight-color: transparent;
   background-color: var(--_btn-bg);
   color: var(--_btn-text);
   text-shadow: 0 1px 1px var(--_btn-text-shadow);
-
-  font-size: 5vwin;
+  font-size: min(5vmin, 3rem);
   font-family: Audiowide;
   padding-block: 0.75ch;
   padding-inline: 2ch;
@@ -101,70 +71,76 @@ body {
   transform: translateZ(var(--distance));
   transform-style: preserve-3d;
 }
-
 .threeD-button-set button:is(:hover, :focus-visible):not(:active) {
   --distance: 15px;
   background-color: var(--_btn-bg-hover);
 }
-
-.threeD-button-set > button::before,
-.threeD-button-set > button::after {
+@media (prefers-reduced-motion: no-preference) {
+  .threeD-button-set button:is(:hover, :focus-visible):not(:active) {
+    --distance: 3vmax;
+    transition-timing-function: var(--_bounce-ease);
+    transition-duration: 0.4s;
+  }
+  .threeD-button-set button:is(:hover, :focus-visible):not(:active)::after {
+    transition-duration: 0.5s;
+  }
+  .threeD-button-set button:is(:hover, :focus-visible):not(:active)::before {
+    transition-duration: 0.3s;
+  }
+}
+.threeD-button-set button::after,
+.threeD-button-set button::before {
   content: '';
-  opacity: 0;
+  opacity: 0.8;
   position: absolute;
   inset: 0;
   border: 1px solid var(--theme);
   border-radius: 5px 20px;
   transform: translateZ(calc(var(--distance) / 3));
 }
-
-.threeD-button-set > button::before {
+@media (prefers-reduced-motion: no-preference) {
+  .threeD-button-set button::after,
+  .threeD-button-set button::before {
+    transition: transform 0.1s ease-out;
+  }
+}
+.threeD-button-set button::before {
   border-width: 3px;
   transform: translateZ(calc(var(--distance) / 3 * -1));
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .threeD-button-set {
-    /* browser-hint to it can be prepared and optimized */
+  .threeD-button-set button {
     will-change: transform;
-
-    transition: transform 0.1s ease;
-    animation: rotate-y 5s ease-in-out infinite;
+    transition: transform 0.2s ease, background-color 0.5s ease;
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  .threeD-button-set {
-    /* --theme: hsl(255 53% 50%);
-    --theme-bg: hsl(255 53% 71% / 25%);
-    --theme-bg-hover: hsl(255 53% 50% / 40$);
-    --theme-shadow: hsl(255 53% 50% 10% / 25%); */
+@-webkit-keyframes rotate-y {
+  50% {
+    transform: rotateY(15deg) rotateX(-6deg);
   }
 }
-
-@media (dynamic-range: high) {
-  .threeD-button-set {
-    @supports (color: color(display-p3 0 0 0)) {
-      --theme: color(display-p3 0.4 0 0.9);
-    }
+@keyframes rotate-y {
+  50% {
+    transform: rotateY(15deg) rotateX(-6deg);
   }
 }
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 html {
   block-size: 100%;
   background: conic-gradient(at -10%, at 50%, #ff1493, #0ff);
   background: conic-gradient(at -10% 50%, #ff1493, #0ff);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    /* background: conic-gradient(at -10%, at 50%, #212529, 50%, #495057, #212529);
-    background: conic-gradient(at -10% 50%, #212529, 50%, #495057, #212529); */
-  }
-}
-
-@keyframes rotate-y {
-  50% {
-    transform: rotateY(15deg) rotateX(-6deg);
-  }
+body {
+  min-block-size: 100%;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  place-content: center;
 }

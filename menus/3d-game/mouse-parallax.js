@@ -5,12 +5,14 @@ const { matches: motionOK } = window.matchMedia(
   '(prefers-reduced-motion: no-preference)'
 );
 
-window.addEventListener('mousemove', ({ target, clientX, clientY }) => {
-  const { dx, dy } = getAngles(clientX, clientY);
+if (motionOK) {
+  window.addEventListener('mousemove', ({ target, clientX, clientY }) => {
+    const { dx, dy } = getAngles(clientX, clientY);
 
-  menu.style.setProperty('--x', `${dy / 20}deg`);
-  menu.style.setProperty('--y', `${dx / 20}deg`);
-});
+    menu.style.setProperty('--x', `${dy / 20}deg`);
+    menu.style.setProperty('--y', `${dx / 20}deg`);
+  });
+}
 
 const getAngles = (clientX, clientY) => {
   const { x, y, width, height } = menuRect;
