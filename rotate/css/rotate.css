@@ -1,4 +1,7 @@
-/* reset browser agent styles */
+/*
+https://www.prowebdesign.ro/css-shapes-images-in-rounded-corner-square-rotated-to-45-degrees-rhombus/
+*/
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -17,38 +20,56 @@ body {
 .frame {
   width: 200px;
   height: 200px;
-  border: 15px solid red;
-  border-radius: 15px;
-  transform-origin: 100%;
-  transform: rotate(-10deg);
+  border: 8px solid red;
+  border-radius: 25px;
+  transform-origin: 0 100%;
+  transform: rotate(-11deg);
   transition: 0.5s;
-}
-
-/* .frame:after { */
-.image {
-  content: '';
-  /* position: absolute; */
-  width: 250px;
-  height: 250px;
-  top: -20px;
-  left: -20px;
-  background-image: url('../images/figma.png');
-  background-size: 270px;
-  background-position: center center;
-  transform-origin: 100%;
-  transform: rotate(10deg);
-  transition: 0.5s;
+  overflow: hidden;
 }
 
 .frame:hover {
-  transform-origin: bottom right;
+  transform-origin: 0 100%;
   transform: rotate(0deg);
   transition: 0.5s;
 }
 
-/* .frame:hover:after { */
-.image:hover {
-  transform-origin: bottom right;
-  transform: rotate(0deg);
+.frame img {
+  width: 140%;
+  height: 140%;
+  position: relative;
+  top: -40px;
+  left: -40px;
+  transform: rotate(11deg);
   transition: 0.5s;
+}
+
+.frame:hover img {
+  transform: rotate(0deg);
+}
+
+.outerbox {
+  width: 200px;
+  height: 200px;
+}
+
+.innerbox {
+  width: 200px;
+  height: 200px;
+}
+
+.innerbox:before {
+  width: 300px;
+  height: 300px;
+  display: block;
+  content: '';
+  position: absolute;
+  background-image: url('../images/shadow.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  top: 59%;
+  left: 42%;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
