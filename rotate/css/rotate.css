@@ -24,28 +24,29 @@ body {
   border-radius: 25px;
   transform-origin: 0 100%;
   transform: rotate(-11deg);
-  transition: 0.5s;
+  transition: 0.3s;
   overflow: hidden;
 }
 
 .frame:hover {
   transform-origin: 0 100%;
   transform: rotate(0deg);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .frame img {
   width: 140%;
   height: 140%;
   position: relative;
-  top: -40px;
+  top: -35px;
   left: -40px;
   transform: rotate(11deg);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .frame:hover img {
   transform: rotate(0deg);
+  transition: 0.3s;
 }
 
 .outerbox {
@@ -59,7 +60,7 @@ body {
 }
 
 .innerbox:before {
-  width: 300px;
+  width: 350px;
   height: 300px;
   display: block;
   content: '';
@@ -67,9 +68,15 @@ body {
   background-image: url('../images/shadow.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
-  top: 59%;
-  left: 42%;
+  top: 58%;
+  left: 39%;
   pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  opacity: 0.4;
+  transition: 0.3s ease-in-out;
+}
+
+.innerbox:hover:before {
+  left: 42%;
+  opacity: 0.6;
+  transition: 0.3s;
 }
