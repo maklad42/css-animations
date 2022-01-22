@@ -28,8 +28,8 @@ body {
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transition: 2.5s ease-in-out;
-  transition-delay: calc(0.25s * var(--j));
+  transition: 2.1s ease-in-out;
+  transition-delay: calc(0.15s * var(--j));
 }
 
 .container:hover .text {
