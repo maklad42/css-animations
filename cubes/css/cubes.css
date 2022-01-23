@@ -28,7 +28,7 @@ body {
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transition: 2.1s ease-in-out;
+  transition: 2s ease-in-out;
   transition-delay: calc(0.15s * var(--j));
 }
 

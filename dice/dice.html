@@ -8,13 +8,27 @@
   <link rel="stylesheet" href="css/dice.css">
 </head>
 <body>
+  <div class="controls">
+    <div class="slider x">
+      <div class="inputs"><input type="range" name="X" id="X" min="-360" max="360" step="1" value="0"></div>
+      <div class="slider-value">0</div>
+    </div>
+    <div class="slider y">
+      <div class="inputs"><input type="range" name="Y" id="Y" min="-360" max="360" step="1" value="0"></div>
+      <div class="slider-value">0</div>
+    </div>
+    <div class="slider z">
+      <div class="inputs"><input type="range" name="Z" id="Z" min="-360" max="360" step="1" value="0"></div>
+      <div class="slider-value">0</div>
+    </div>
+  </div>
   <div class="container">
     <div style="--x:0; --y:0; --z:0;" class="face top">1</div>
     <div style="--x:1; --y:1; --z:1;" class="face front">2</div>
     <div style="--x:2; --y:2; --z:2;" class="face bottom">6</div>
-    <!-- <div style="--x:3; --y:3; --z:3;" class="face back">5</div> -->
-    <!-- <div style="--x:4; --y:0; --z:0;" class="face left">4</div> -->
-    <!-- <div style="--x:5; --y:0; --z:0;" class="face right">3</div> -->
+    <div style="--x:3; --y:3; --z:3;" class="face back">5</div>
+    <div style="--x:4; --y:0; --z:0;" class="face left">4</div>
+    <div style="--x:5; --y:0; --z:0;" class="face right">3</div>
   </div>
 </body>
 </html>
