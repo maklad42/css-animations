@@ -22,7 +22,7 @@ body {
 .slider {
   display: grid;
   gap: 15px;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 400px 1fr;
   align-items: center;
   justify-items: center;
 }
@@ -32,6 +32,10 @@ div.inputs {
   height: 2.4rem;
   margin: 0.3rem;
   line-height: 3rem;
+}
+
+div.inputs input {
+  width: 300px;
 }
 
 .slider-value {
@@ -48,13 +52,14 @@ div.inputs {
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(-30deg) rotateY(20deg);
-  transition: 2s;
+  transform-origin: 50% 50% -100px;
+  transform: rotateX(7deg) rotateY(4deg);
+  transition: 1s;
 }
 
 .container:hover {
   transform: rotateX(560deg) rotateY(330deg) rotateZ(270deg);
-  transition: 2s;
+  transition: 1s;
 }
 
 .face {
@@ -65,7 +70,7 @@ div.inputs {
   height: 200px;
   transform-style: preserve-3d;
   transition: 2s ease-in-out;
-  background-color: rgb(104, 104, 114);
+  background-color: rgba(104, 104, 114, 0.8);
   border: solid 1px rgb(56, 83, 133);
   color: rgb(144, 228, 144);
   font-size: 3rem;

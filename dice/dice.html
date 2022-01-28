@@ -6,20 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dice Roll Animations</title>
   <link rel="stylesheet" href="css/dice.css">
+  <script async src="./scripts/dice.js"></script>
 </head>
 <body>
   <div class="controls">
     <div class="slider x">
       <div class="inputs"><input type="range" name="X" id="X" min="-360" max="360" step="1" value="0"></div>
-      <div class="slider-value">0</div>
+      <div id="xVal"class="slider-value">0</div>
     </div>
     <div class="slider y">
       <div class="inputs"><input type="range" name="Y" id="Y" min="-360" max="360" step="1" value="0"></div>
-      <div class="slider-value">0</div>
+      <div id="yVal"class="slider-value">0</div>
     </div>
     <div class="slider z">
       <div class="inputs"><input type="range" name="Z" id="Z" min="-360" max="360" step="1" value="0"></div>
-      <div class="slider-value">0</div>
+      <div id="zVal"class="slider-value">0</div>
     </div>
   </div>
   <div class="container">
