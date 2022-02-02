@@ -27,6 +27,20 @@ body {
   justify-items: center;
 }
 
+.rollBtn {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-top: 15px;
+}
+
+.rollBtn button {
+  width: 50%;
+  height: 2rem;
+  line-height: 2rem;
+}
+
 div.inputs {
   display: inline-block;
   height: 2.4rem;

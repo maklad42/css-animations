@@ -34,10 +34,6 @@ function roll() {
   let z = 360 - Math.floor(Math.random() * 8 + 1) * 90;
   console.log(x, y, z);
 
-  // apply these values to the css rotateX/Y/Z
-  const cnt = document.querySelector('.container');
-  cnt.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg)`;
-
   // apply these values to the sliders
   xSlide.value = x;
   ySlide.value = y;
@@ -47,4 +43,6 @@ function roll() {
   xVal.textContent = x;
   yVal.textContent = y;
   zVal.textContent = z;
+
+  rotateCnt();
 }
